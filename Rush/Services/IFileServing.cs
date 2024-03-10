@@ -1,6 +1,8 @@
-﻿namespace Rush.Services;
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace Rush.Services;
 
 public interface IFileServing
 {
-    public Task ReturnFile(Guid itemid);
+    public Task<FileStreamResult> ReturnFile(Guid itemid);
 }

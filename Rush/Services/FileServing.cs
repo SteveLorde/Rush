@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Rush.Data;
 using Rush.Data.Models;
 
@@ -15,13 +16,18 @@ class FileServing : IFileServing
         _webhostenv = webhostenv;
     }
     
-    public async Task ReturnFile(Guid itemid)
+    public async Task<FileStreamResult> ReturnFile(Guid itemid)
     {
         Item item = await _db.Items.FirstAsync(itemquery => itemquery.Id == itemid);
         string itemPath = Path.Combine(_webhostenv.ContentRootPath, "Storage", item.Id.ToString(), item.Filesname);
 
         FileStream filestream = new FileStream(itemPath, FileMode.Open, FileAccess.Read);
-
-
+        FileStreamResult filetodownload = new FileStreamResult(filestream, "application/octet-stream")
+        {
+            FileDownloadName = item.Filesname
+        };
+        return filetodownload;
     }
+    
+    
 }

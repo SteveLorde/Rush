@@ -6,6 +6,7 @@ public interface IRepo
 {
     public Task<List<Item>> GetItems();
     public Task<Item> GetItem(Guid itemid);
+    public Task<bool> GenerateFolders();
     public Task AddItem();
     public Task RemoveItem(Guid itemid);
 }

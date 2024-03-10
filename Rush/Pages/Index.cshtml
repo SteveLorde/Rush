@@ -8,3 +8,18 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+<div class="d-grid gap-5">
+    @foreach (var item in Model.Items)
+    {
+        //Item Card
+        <div>
+            <img src="storage/@item.Id.ToString()/cover.png" alt="cover"/>
+            <h3>@item.Name</h3>
+            <div class="d-flex flex-row">
+                <p>@item.Filesname</p>
+                <p></p>
+            </div>
+        </div>
+    }
+</div>
