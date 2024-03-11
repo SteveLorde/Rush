@@ -6,4 +6,5 @@ public class Item
     public string Name { get; set; }
     public string Filesname { get; set; }
     public string imagecover { get; set; }
+    public DateOnly LastUpdated { get; set; }
 }

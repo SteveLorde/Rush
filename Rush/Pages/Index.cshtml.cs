@@ -24,10 +24,12 @@ public class IndexModel : PageModel
     {
         //Items = await _repo.GetItems();
     }
-
-    public async Task<FileStreamResult> DownloadFile(Guid itemid)
+    
+    
+    public async Task<FileStreamResult> OnGetDownloadItem(string itemid)
     {
-        return await _fileservice.ReturnFile(itemid);
+        Guid itemidGuid = Guid.Parse(itemid);
+        return await _fileservice.ReturnFile(itemidGuid);
     }
     
     

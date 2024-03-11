@@ -20,7 +20,6 @@ class FileServing : IFileServing
     {
         Item item = await _db.Items.FirstAsync(itemquery => itemquery.Id == itemid);
         string itemPath = Path.Combine(_webhostenv.ContentRootPath, "Storage", item.Id.ToString(), item.Filesname);
-
         FileStream filestream = new FileStream(itemPath, FileMode.Open, FileAccess.Read);
         FileStreamResult filetodownload = new FileStreamResult(filestream, "application/octet-stream")
         {

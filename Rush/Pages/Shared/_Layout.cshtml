@@ -1,31 +1,34 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>@ViewData["Title"] - Rush</title>
-    <link rel="stylesheet" href="~/css/site.mini.css" asp-append-version="true"/>
-</head>
-<body class="bg-gray-800">
-<header class="flex flex-row items-center justify-center p-5 bg-gray-800">
-    <h3 class="font-bold text-white">Games Website</h3>
-</header>
+        <head>
+            <meta charset="utf-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <title>@ViewData["Title"] - Rush</title>
+            <link rel="stylesheet" href="~/css/site.mini.css" asp-append-version="true"/>
+            <script src="~/js/ViewDownloadService.js" asp-append-version="true"></script>
 
-<div class="">
-    <main role="main" class="">
-        @RenderBody()
-    </main>
-</div>
+        </head>
+    <body class="bg-gray-800">
 
-<footer class="">
-    <p class="text-center">
-        This website shares games files, but does not support piracy or provides support for pirated content.
-    </p>
-</footer>
+        <header class="flex flex-row items-center justify-center p-5 bg-gray-800">
+            <h3 class="font-bold text-white">Games Website</h3>
+        </header>
 
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
-<script src="~/js/site.js" asp-append-version="true"></script>
+        <div class="">
+            <main role="main" class="">
+                @RenderBody()
+            </main>
+        </div>
 
-@await RenderSectionAsync("Scripts", required: false)
-</body>
+        <footer class="">
+            <p class="text-center">
+                This website shares games files, but does not support piracy or provides support for pirated content.
+            </p>
+        </footer>
+
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+        @await RenderSectionAsync("Scripts", required: false)
+
+    </body>
 </html>

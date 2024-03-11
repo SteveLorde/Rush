@@ -12,15 +12,19 @@
         @foreach (var item in Model.Items)
         {
             //Item Card
-            <div>
-                <img src="storage/@item.Id.ToString()/cover.png" alt="cover"/>
-                <h3 class="font-bold">@item.Name</h3>
+            <p>last updated @item.LastUpdated.ToString()</p>
+            
+            <div id="Item" onclick="DownloadItem(@item.Id)" ItemId="@item.Id" class="w-min-[200px]">
+                <img class="w-max-[200px]" src="storage/@item.Id.ToString()/cover.png" alt="cover"/>
+                <h3 class="font-bold text-white">@item.Name</h3>
                 <div class="flex flex-row gap-5">
-                    <p>@item.Filesname</p>
-                    <p></p>
+                    <p class="text-white">@item.Filesname</p>
+                    <p class="text-white"></p>
                 </div>
             </div>
         }
     </div>
 
 </section>
+
+
