@@ -14,7 +14,7 @@
             //Item Card
             <p>last updated @item.LastUpdated.ToString()</p>
             
-            <div id="Item" onclick="DownloadItem(@item.Id)" ItemId="@item.Id" class="w-min-[200px]">
+            <div id="Item" onclick="DownloadItemSecondMethod(@item.Id.ToString())" ItemId="@item.Id" class="w-min-[200px]">
                 <img class="w-max-[200px]" src="storage/@item.Id.ToString()/cover.png" alt="cover"/>
                 <h3 class="font-bold text-white">@item.Name</h3>
                 <div class="flex flex-row gap-5">
