@@ -9,7 +9,7 @@ public class IndexModel : PageModel
 {
     private readonly ILogger<IndexModel> _logger;
     private readonly IFileServing _fileservice;
-    public List<Item> Items;
+    public List<Item> Items = new List<Item>();
     private readonly IRepo _repo;
 
     public IndexModel(ILogger<IndexModel> logger, IFileServing fileserving, IRepo repo)
@@ -21,7 +21,7 @@ public class IndexModel : PageModel
 
     public async void OnGet()
     {
-        Items = await _repo.GetItems();
+        //Items = await _repo.GetItems();
     }
 
     public async Task<FileStreamResult> DownloadFile(Guid itemid)

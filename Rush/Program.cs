@@ -1,11 +1,12 @@
 using Microsoft.Extensions.FileProviders;
 using Rush.Data;
+using Rush.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddDbContext<DataContext>();
+builder.Services.AddServices();
 
 var app = builder.Build();
 
