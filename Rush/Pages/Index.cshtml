@@ -4,19 +4,14 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
-
-<div class="d-grid gap-5">
+<div class="grid grid-cols-3 gap-5">
     @foreach (var item in Model.Items)
     {
         //Item Card
         <div>
             <img src="storage/@item.Id.ToString()/cover.png" alt="cover"/>
-            <h3>@item.Name</h3>
-            <div class="d-flex flex-row">
+            <h3 class="font-bold">@item.Name</h3>
+            <div class="flex flex-row gap-5">
                 <p>@item.Filesname</p>
                 <p></p>
             </div>
