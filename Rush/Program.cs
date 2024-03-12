@@ -33,4 +33,4 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 
-app.Run("http://localhost:5005");
+app.Run("https://localhost:5005");

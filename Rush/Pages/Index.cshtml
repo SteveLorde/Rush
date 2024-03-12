@@ -4,27 +4,23 @@
     ViewData["Title"] = "Home page";
 }
 
-<section class="flex flex-col items-center">
-    
-    <h1 class="text-center">@Model.TestText</h1>
+<section class="items-center">
 
-    <div class="grid grid-cols-3 gap-5">
+    <div class="flex flex-col flex-wrap items-center gap-5">
         @foreach (var item in Model.Items)
         {
             //Item Card
-            <p>last updated @item.LastUpdated.ToString()</p>
-            
-            <div id="Item" onclick="DownloadItemSecondMethod(@item.Id.ToString())" ItemId="@item.Id" class="w-min-[200px]">
-                <img class="w-max-[200px]" src="storage/@item.Id.ToString()/cover.png" alt="cover"/>
+            <a asp-page="/Index" asp-page-handler="DownloadItem" asp-route-itemid="@item.Id.ToString()" class="flex flex-col items-center justify-center gap-4 bg-gray-700 rounded-1xl w-[200px] hover:cursor-pointer">
+                <p class="mt-2 text-white">last updated @item.LastUpdated.ToString()</p>
+                <img class="w-[200px]" src="storage/@item.Id.ToString()/cover.png" alt="cover"/>
                 <h3 class="font-bold text-white">@item.Name</h3>
-                <div class="flex flex-row gap-5">
+                <div class="mb-2 flex flex-row items-center justify-center gap-5">
                     <p class="text-white">@item.Filesname</p>
-                    <p class="text-white"></p>
+                    <p class="text-white">20gb</p>
                 </div>
-            </div>
+            </a>
         }
     </div>
 
 </section>
-
 
